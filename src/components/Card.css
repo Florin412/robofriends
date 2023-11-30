@@ -1,0 +1,8 @@
+.hover-effect {
+  transition: transform 0.3s ease-in-out;
+}
+
+.hover-effect:hover {
+  cursor: pointer;
+  transform: scale(1.05); /* Mărimea elementului va crește cu 5% la hover */
+}
