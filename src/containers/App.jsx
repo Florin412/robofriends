@@ -6,38 +6,14 @@ import Scroll from "../components/Scroll";
 import ErrorBoundary from "../components/ErrorBoundary";
 
 function App() {
-  // constructor() {
-  //   super();
-
-  //   this.state = {
-  //     searchField: "",
-  //     robots: []
-  //   };
-  // }
-
   const [robots, setRobots] = useState([]);
   const [searchField, setSearchField] = useState("");
-
-  // componentDidMount() {
-  //   fetch("https://jsonplaceholder.typicode.com/users")
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       this.setState({ robots: res });
-  //     })
-  //     .catch((err) => {
-  //       console.log(
-  //         "There are some errors when you fetch the robots from the server: ",
-  //         err
-  //       );
-  //     });
-  // }
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((res) => res.json())
       .then((res) => {
         setRobots(res);
-        console.log(robots, searchField);
       })
       .catch((err) => {
         console.log(
