@@ -4,11 +4,20 @@ import "./index.css";
 import App from "./containers/App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Provider } from "react-redux";
+import { createStore } from "redux";
+import { searchRobots } from "./reducers";
 
+// Creați magazinul Redux
+const store = createStore(searchRobots);
+
+// Încadrați întregul arbore de componente în <Provider> și furnizați magazinul
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
