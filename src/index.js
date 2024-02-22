@@ -5,11 +5,16 @@ import App from "./containers/App";
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import { searchRobots } from "./reducers";
+import { createLogger } from "redux-logger";
+import { thunk } from "redux-thunk";
+
+const logger = createLogger();
 
 // Creați magazinul Redux
-const store = createStore(searchRobots);
+const store = createStore(searchRobots, applyMiddleware(thunk, logger));
+console.log(store);
 
 // Încadrați întregul arbore de componente în <Provider> și furnizați magazinul
 const root = ReactDOM.createRoot(document.getElementById("root"));
