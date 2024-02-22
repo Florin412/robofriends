@@ -14,10 +14,10 @@ const logger = createLogger();
 
 const rootReducer = combineReducers({ searchRobots, requestRobots });
 
-// Creați magazinul Redux
+// Crearea magazinului Redux
 const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
-// Încadrați întregul arbore de componente în <Provider> și furnizați magazinul
+// Incarcarea intregului arbore de componente in <Provider>
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
